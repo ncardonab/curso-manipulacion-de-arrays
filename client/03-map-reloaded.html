@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const products = [
+      { title: "Burguer", price: 21 },
+      { title: "Pizza", price: 20 },
+      { title: "Falafel", price: 10 }
+    ];
+
+    const app = document.getElementById("app");
+    const list = products.map(
+      (product) => `<li>${product.title} - ${product.price}</li>`
+    );
+
+    app.innerHTML = list.join("");
+  </script>
+</html>

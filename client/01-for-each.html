@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const products = [
+        { title: "Burguer", price: 21 },
+        { title: "Pizza", price: 20 },
+      ];
+
+      const app = document.getElementById("app");
+      products.forEach((product) => {
+        app.innerHTML += `<li>${product.title} - ${product.price}</li>`;
+      });
+
+      app.innerHTML += "<br></br>";
+
+      let nodes = "";
+      const tasks = [
+        { title: "Report bug", status: "New" },
+        { title: "Read doc", status: "In progress" },
+        { title: "KT", status: "Blocked" },
+        { title: "Career path", status: "Done" },
+      ];
+
+      tasks.forEach(({ title, status }) => {
+        const element = `<li><input type='checkbox' id='${title}' name='${title} ${
+          status === "Done" && "checked"
+        }/><label>${title}</label></li>`;
+        nodes += element;
+      });
+      app.insertAdjacentHTML("beforeend", nodes);
+    </script>
+  </body>
+</html>
